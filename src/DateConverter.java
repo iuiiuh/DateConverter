@@ -7,7 +7,7 @@ public class DateConverter {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Date Converter Tool - Difference Feature Active");
+        System.out.println("Date Converter Tool - merged features");
         System.out.println("1. Convert Date Format");
         System.out.println("2. Calculate Date Difference");
         System.out.println("3. Exit");
@@ -32,10 +32,29 @@ public class DateConverter {
         input.close();
     }
 
-    public static void convertDateFormat(Scanner input) {
-        System.out.println("Date format conversion - Under development");
-        // TODO: Will be developed
+   public static void convertDateFormat(Scanner input) {
+    try {
+        System.out.println("Convert Date Format");
+        
+        System.out.print("Enter date (YYYY-MM-DD): ");
+        String dateStr = input.next();
+        
+        SimpleDateFormat originalFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat targetFormat1 = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat targetFormat2 = new SimpleDateFormat("MM-dd-yyyy");
+        SimpleDateFormat targetFormat3 = new SimpleDateFormat("yyyy/MM/dd");
+        
+        Date date = originalFormat.parse(dateStr);
+        
+        System.out.println("Date in different formats:");
+        System.out.println("DD/MM/YYYY: " + targetFormat1.format(date));
+        System.out.println("MM-DD-YYYY: " + targetFormat2.format(date));
+        System.out.println("YYYY/MM/DD: " + targetFormat3.format(date));
+        
+    } catch (Exception e) {
+        System.out.println("Error in date format! Use YYYY-MM-DD");
     }
+}
 
    public static void calculateDateDifference(Scanner input) {
     try {
