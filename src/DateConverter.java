@@ -7,7 +7,7 @@ public class DateConverter {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Date Converter Tool");
+        System.out.println("Date Converter Tool - Difference Feature Active");
         System.out.println("1. Convert Date Format");
         System.out.println("2. Calculate Date Difference");
         System.out.println("3. Exit");
